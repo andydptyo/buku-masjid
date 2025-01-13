@@ -11,7 +11,7 @@ return new class extends Migration
     {
         if (!Schema::hasColumn('books', 'budget')) {
             Schema::table('books', function (Blueprint $table) {
-                $table->unsignedDecimal('budget', 12)->nullable()->after('bank_account_id');
+                $table->decimal('budget', 12)->unsigned()->nullable()->after('bank_account_id');
             });
         }
         if (!Schema::hasColumn('books', 'report_periode_code')) {

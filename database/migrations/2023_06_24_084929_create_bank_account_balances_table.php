@@ -15,7 +15,7 @@ return new class extends Migration
             $table->increments('id');
             $table->unsignedInteger('bank_account_id');
             $table->date('date');
-            $table->unsignedDecimal('amount', 12);
+            $table->decimal('amount', 12)->unsigned();
             $table->string('description')->nullable();
             $table->unsignedInteger('creator_id');
             $table->timestamps();

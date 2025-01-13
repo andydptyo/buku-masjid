@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('date');
-            $table->unsignedDecimal('amount', 12);
+            $table->decimal('amount', 12)->unsigned();
             $table->boolean('in_out')->unsigned();
             $table->string('description');
             $table->unsignedInteger('category_id')->nullable();
