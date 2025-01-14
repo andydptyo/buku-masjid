@@ -1,4 +1,4 @@
-<div class="card shadow-lg align-item-center" wire:init="getLevelStats" style="border-radius:1em; height: 10em">
+<div class="card shadow-lg align-item-center" style="border-radius:1em; height: 10em">
     <div class="card-body py-2 row align-items-center" >
         @if ($isLoading)
             <div class="loading-state text-center w-100">
@@ -6,6 +6,7 @@
             </div>
         @else
             <div id="apex_partner_level_stats" style="width: 22em;margin: 0 auto;"></div>
+            <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
             <script>
                 var options = {
                     series: {!! json_encode(array_values($partnerLevelStats)) !!},

@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class LevelStats extends Component
 {
-    public $partnerLevelStats;
+    public $partnerLevelStats = [];
     public $book;
     public $year;
     public $month;
@@ -22,7 +22,7 @@ class LevelStats extends Component
         return view('livewire.donors.level_stats');
     }
 
-    public function getLevelStats()
+    public function mount()
     {
         $this->partnerLevelStats = $this->calculateLevelStats();
         $this->isLoading = false;

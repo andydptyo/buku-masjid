@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\BankAccount;
 use App\Models\Book;
+use App\Models\Category;
 use App\Models\Lecturing;
 use App\Transaction;
 use App\User;
@@ -33,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
             'bank_accounts' => BankAccount::class,
             'transactions' => Transaction::class,
             'lecturings' => Lecturing::class,
+            'categories' => Category::class,
         ]);
 
         // Ref: https://dzone.com/articles/how-to-use-laravel-macro-with-example

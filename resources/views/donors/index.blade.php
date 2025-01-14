@@ -26,10 +26,6 @@
     </div>
 @endsection
 
-@prepend('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-@endprepend
-
 @push('scripts')
 <script>
 (function () {

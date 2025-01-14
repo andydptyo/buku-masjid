@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class TopCategory extends Component
 {
-    public $topCategorySummary;
+    public $topCategorySummary = [];
     public $isLoading = true;
     public $isForPrint = false;
     public $startDate;

@@ -41,8 +41,9 @@ class DonorsCount extends Component
             return Cache::get($cacheKey);
         }
 
-        $donorsCount['total'] = Partner::whereJsonContains('type_code', $this->partnerTypeCode)->count();
-        $donorsCount['last_periode_total'] = Partner::whereJsonContains('type_code', $this->partnerTypeCode)->count();
+        $partnersCount = Partner::whereJsonContains('type_code', $this->partnerTypeCode)->count();
+        $donorsCount['total'] = $partnersCount;
+        $donorsCount['last_periode_total'] = $partnersCount;
 
         $currentPeriodeDateRange = [$this->year.'-01-01', $this->year.'-12-31'];
         $lastPeriodeDateRange = [($this->year - 1).'-01-01', ($this->year - 1).'-12-31'];
