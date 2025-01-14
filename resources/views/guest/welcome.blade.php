@@ -20,12 +20,12 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6">
-            @livewire('public_home.weekly_financial_summary')
+            @livewire('public-home.weekly-financial-summary')
         </div>
         @if (Route::has('lecturings.index'))
             <div class="col-lg-6">
-                @livewire('public_home.daily_lecturings', ['date' => today(), 'dayTitle' => 'today'])
-                @livewire('public_home.daily_lecturings', ['date' => today()->addDay(), 'dayTitle' => 'tomorrow'])
+                @livewire('public-home.daily-lecturings', ['date' => today(), 'dayTitle' => 'today'])
+                @livewire('public-home.daily-lecturings', ['date' => today()->addDay(), 'dayTitle' => 'tomorrow'])
             </div>
         @endif
     </div>

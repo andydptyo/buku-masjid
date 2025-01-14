@@ -1,7 +1,7 @@
 <div class="card shadow-lg align-item-center" style="border-radius:1em; height: 10em">
     <div class="card-body py-2 row align-items-center" >
         @if ($isLoading)
-            <div wire:loading class="loading-state text-center w-100">
+            <div class="loading-state text-center w-100">
                 <img src="{{ asset('images/spinner.gif') }}" alt="Data loading spinner">
             </div>
         @else
