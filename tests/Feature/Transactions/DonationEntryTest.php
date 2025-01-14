@@ -13,7 +13,7 @@ class DonationEntryTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function user_can_entry_transction_from_donors_index_page()
+    public function user_can_entry_transaction_from_donors_index_page()
     {
         $user = $this->loginAsUser();
         $book = factory(Book::class)->create();
@@ -48,7 +48,7 @@ class DonationEntryTest extends TestCase
     }
 
     /** @test */
-    public function user_can_entry_transction_from_new_donor()
+    public function user_can_entry_transaction_from_new_donor()
     {
         $user = $this->loginAsUser();
         $book = factory(Book::class)->create();
@@ -97,7 +97,7 @@ class DonationEntryTest extends TestCase
     }
 
     /** @test */
-    public function user_can_entry_transction_from_donor_detail_page()
+    public function user_can_entry_transaction_from_donor_detail_page()
     {
         $user = $this->loginAsUser();
         $book = factory(Book::class)->create();

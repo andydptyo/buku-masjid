@@ -53,18 +53,20 @@ class LevelStats extends Component
                 $query->where('in_out', Transaction::TYPE_INCOME);
             })->count();
 
-        foreach ($partnerLevels['Donatur'] as $partnerLevelCode => $partnerLevelName) {
-            $partnerLevelCount = Partner::whereJsonContains('type_code', $this->partnerTypeCode)
-                ->whereJsonContains('level_code', ['donatur' => $partnerLevelCode])
-                ->whereHas('transactions', function ($query) use ($dateRange) {
-                    if ($this->book) {
-                        $query->where('book_id', $this->book->id);
-                    }
-                    $query->whereBetween('date', $dateRange);
-                    $query->where('in_out', Transaction::TYPE_INCOME);
-                })->count();
-            $partnerLevelPercent = get_percent($partnerLevelCount, $partnerTotal);
-            $partnerLevelStats[$partnerLevelName.'&nbsp;&nbsp;&nbsp;&nbsp;<strong>'.$partnerLevelCount.'</strong> ('.$partnerLevelPercent.'%)'] = $partnerLevelCount;
+        if (isset($partnerLevels['Donatur'])) {
+            foreach ($partnerLevels['Donatur'] as $partnerLevelCode => $partnerLevelName) {
+                $partnerLevelCount = Partner::whereJsonContains('type_code', $this->partnerTypeCode)
+                    ->whereJsonContains('level_code', ['donatur' => $partnerLevelCode])
+                    ->whereHas('transactions', function ($query) use ($dateRange) {
+                        if ($this->book) {
+                            $query->where('book_id', $this->book->id);
+                        }
+                        $query->whereBetween('date', $dateRange);
+                        $query->where('in_out', Transaction::TYPE_INCOME);
+                    })->count();
+                $partnerLevelPercent = get_percent($partnerLevelCount, $partnerTotal);
+                $partnerLevelStats[$partnerLevelName.'&nbsp;&nbsp;&nbsp;&nbsp;<strong>'.$partnerLevelCount.'</strong> ('.$partnerLevelPercent.'%)'] = $partnerLevelCount;
+            }
         }
 
         Cache::put($cacheKey, $partnerLevelStats, $duration);
