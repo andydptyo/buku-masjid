@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\BankAccount;
 use App\Models\Book;
+use App\Models\Lecturing;
 use App\Transaction;
 use App\User;
 use Illuminate\Auth\SessionGuard;
@@ -31,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
             'users' => User::class,
             'bank_accounts' => BankAccount::class,
             'transactions' => Transaction::class,
+            'lecturings' => Lecturing::class,
         ]);
 
         // Ref: https://dzone.com/articles/how-to-use-laravel-macro-with-example

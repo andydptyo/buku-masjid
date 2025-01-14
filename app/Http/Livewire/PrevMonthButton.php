@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class PrevMonthButton extends Component
 {
+    public $month = null;
+    public $year = null;
     public $routeName = 'reports.index';
     public $monthNumber = null;
     public $yearNumber = null;

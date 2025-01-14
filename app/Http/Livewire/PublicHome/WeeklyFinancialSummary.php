@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class WeeklyFinancialSummary extends Component
 {
+    public $today;
     public $startWeek;
     public $todayDayDate;
     public $bookVisibility = 'public';

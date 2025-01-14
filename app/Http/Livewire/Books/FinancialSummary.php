@@ -16,6 +16,7 @@ class FinancialSummary extends Component
     public $currentBudget = 0;
     public $currentBalance = 0;
     public $startBalance = 0;
+    public $currentBudgetRemainingLabel;
     public $currentIncomeTotal = 0;
     public $currentSpendingTotal = 0;
     public $currentPeriodeBudgetLabel;

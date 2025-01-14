@@ -10,6 +10,7 @@ class DailyLecturings extends Component
     public $date;
     public $dayTitle;
     public $audienceFriday;
+    public $audienceTarawih;
     public $lecturerName;
     public $lecturings = [];
 
